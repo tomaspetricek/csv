@@ -12,7 +12,7 @@
 
 namespace csv {
     template<std::size_t n_cols, class Stringifier = stringifier>
-    class writer final : public base<n_cols, std::ofstream> {
+    class writer : public base<n_cols, std::ofstream> {
         using base_type = base<n_cols, std::ofstream>;
         constexpr static std::ios_base::openmode default_open_mode = std::ios_base::out;
 
@@ -40,12 +40,10 @@ namespace csv {
         void write_row(const Types& ...outputs)
         {
             static_assert(sizeof...(Types)==n_cols);
-
             std::size_t i{0};
             auto write_line = [&](auto& out) {
                 write_value(i++, Stringifier::to_string(out));
             };
-
             (write_line(outputs), ...);
         }
     };

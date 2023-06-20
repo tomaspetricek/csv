@@ -24,7 +24,7 @@ namespace csv {
         {
             std::size_t next, last{line_.size()};
             if (first_>last)
-                throw std::runtime_error{"Not enough values to read"};
+                throw std::runtime_error{"Not enough values"};
 
             if ((next = line_.find(this->delim_, first_))!=std::string::npos) {
                 last = next;
@@ -47,6 +47,7 @@ namespace csv {
         {
             bool read{false};
             if (std::getline(this->file_, line_)) {
+                line_.erase(std::remove(line_.begin(), line_.end(), '\r'), line_.end());
                 first_ = 0;
                 read = true;
             }
