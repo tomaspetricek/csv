@@ -30,7 +30,6 @@ int main()
     std::array<std::string, n_cols> header;
     std::vector<record> records;
 
-    static_assert(std::is_enum_v<genders>);
     std::cout << "read duration: " << measure_duration([&]() {
         reader.read_header(header);
         record r;

@@ -10,6 +10,8 @@
 namespace csv {
     template<std::size_t n_cols, class FileStream>
     class base {
+        static_assert(n_cols>0);
+
     protected:
         FileStream file_;
         char delim_;

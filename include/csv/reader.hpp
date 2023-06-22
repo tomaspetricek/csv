@@ -14,7 +14,6 @@
 namespace csv {
     template<std::size_t n_cols, class Parser = parser>
     class reader : public base<n_cols, std::ifstream> {
-        static_assert(n_cols>0);
         std::size_t first_{0};
         std::string line_;
         using base_type = base<n_cols, std::ifstream>;
