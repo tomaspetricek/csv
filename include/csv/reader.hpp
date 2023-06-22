@@ -7,9 +7,8 @@
 
 #include <cstddef>
 #include <fstream>
-#include <sstream>
-#include "base.hpp"
-#include "parser.hpp"
+#include <csv/base.hpp>
+#include <csv/parser.hpp>
 
 namespace csv {
     template<std::size_t n_cols, class Parser = parser>

@@ -7,8 +7,8 @@
 
 #include <ios>
 #include <fstream>
-#include "stringifier.hpp"
-#include "base.hpp"
+#include <csv/stringifier.hpp>
+#include <csv/base.hpp>
 
 namespace csv {
     template<std::size_t n_cols, class Stringifier = stringifier>
