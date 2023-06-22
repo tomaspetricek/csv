@@ -31,7 +31,7 @@ namespace csv {
             else {
                 next = line_.size();
             }
-            std::basic_string<char, std::char_traits<char>, std::allocator<char>> data{line_.data()+first_, last-first_};
+            std::string_view data{line_.data()+first_, last-first_};
             first_ = next+1;
 
             try {

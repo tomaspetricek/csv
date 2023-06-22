@@ -21,7 +21,7 @@ namespace csv {
 
         template<class Enum>
         requires std::is_enum_v<Enum>
-        inline static Enum parse(const std::string& data)
+        inline static Enum parse(const std::string_view& data)
         {
             return static_cast<Enum>(parse<typename std::underlying_type<Enum>::type>(data));
         }
