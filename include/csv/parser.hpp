@@ -12,10 +12,18 @@
 
 namespace csv {
     struct parser {
-        template<class T>
-        inline static T parse(std::string_view data)
+        template<class Number>
+        requires std::is_arithmetic_v<Number>
+        inline static Number parse(std::string_view data)
         {
-            return boost::convert<T>(data, boost::cnv::strtol()).value();
+            return boost::convert<Number>(data, boost::cnv::strtol()).value();
+        }
+
+        template<class Enum>
+        requires std::is_enum_v<Enum>
+        inline static Enum parse(const std::string& data)
+        {
+            return static_cast<Enum>(parse<typename std::underlying_type<Enum>::type>(data));
         }
 
         template<class T>

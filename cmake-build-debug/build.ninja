@@ -37,37 +37,17 @@ include CMakeFiles/rules.ninja
 # Logical path to working directory; prefix for absolute paths.
 
 cmake_ninja_workdir = /Users/tomaspetricek/Programming/Languages/Cpp/csv/cmake-build-debug/
-# =============================================================================
-# Object build statements for EXECUTABLE target csv
-
 
 #############################################
-# Order-only phony target for csv
+# Utility command for test
 
-build cmake_object_order_depends_target_csv: phony || CMakeFiles/csv.dir
+build CMakeFiles/test.util: CUSTOM_COMMAND
+  COMMAND = cd /Users/tomaspetricek/Programming/Languages/Cpp/csv/cmake-build-debug && /Applications/CLion.app/Contents/bin/cmake/mac/bin/ctest --force-new-ctest-process
+  DESC = Running tests...
+  pool = console
+  restat = 1
 
-build CMakeFiles/csv.dir/main.cpp.o: CXX_COMPILER__csv_Debug /Users/tomaspetricek/Programming/Languages/Cpp/csv/main.cpp || cmake_object_order_depends_target_csv
-  DEP_FILE = CMakeFiles/csv.dir/main.cpp.o.d
-  FLAGS = -O3 -Wall -Wextra -march=native -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.0.sdk -std=gnu++2b
-  INCLUDES = -I/Users/tomaspetricek/Programming/Languages/Cpp/csv/include -I/usr/local/include
-  OBJECT_DIR = CMakeFiles/csv.dir
-  OBJECT_FILE_DIR = CMakeFiles/csv.dir
-
-
-# =============================================================================
-# Link build statements for EXECUTABLE target csv
-
-
-#############################################
-# Link the executable csv
-
-build csv: CXX_EXECUTABLE_LINKER__csv_Debug CMakeFiles/csv.dir/main.cpp.o
-  FLAGS = -O3 -Wall -Wextra -march=native -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.0.sdk
-  OBJECT_DIR = CMakeFiles/csv.dir
-  POST_BUILD = :
-  PRE_LINK = :
-  TARGET_FILE = csv
-  TARGET_PDB = csv.dbg
+build test: phony CMakeFiles/test.util
 
 
 #############################################
@@ -93,7 +73,159 @@ build CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
 build rebuild_cache: phony CMakeFiles/rebuild_cache.util
 
 # =============================================================================
+# Write statements declared in CMakeLists.txt:
+# /Users/tomaspetricek/Programming/Languages/Cpp/csv/CMakeLists.txt
+# =============================================================================
+
+# =============================================================================
+# Object build statements for EXECUTABLE target csv
+
+
+#############################################
+# Order-only phony target for csv
+
+build cmake_object_order_depends_target_csv: phony || src/CMakeFiles/csv.dir
+
+build src/CMakeFiles/csv.dir/main.cpp.o: CXX_COMPILER__csv_Debug /Users/tomaspetricek/Programming/Languages/Cpp/csv/src/main.cpp || cmake_object_order_depends_target_csv
+  DEFINES = -DBOOST_UNIT_TEST_FRAMEWORK_DYN_LINK -DBOOST_UNIT_TEST_FRAMEWORK_NO_LIB -DNDEBUG
+  DEP_FILE = src/CMakeFiles/csv.dir/main.cpp.o.d
+  FLAGS = -O3 -Wall -Wextra -march=native -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.0.sdk -std=gnu++2b
+  INCLUDES = -I/Users/tomaspetricek/Programming/Languages/Cpp/csv/src/../include -isystem /usr/local/include
+  OBJECT_DIR = src/CMakeFiles/csv.dir
+  OBJECT_FILE_DIR = src/CMakeFiles/csv.dir
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target csv
+
+
+#############################################
+# Link the executable src/csv
+
+build src/csv: CXX_EXECUTABLE_LINKER__csv_Debug src/CMakeFiles/csv.dir/main.cpp.o | /usr/local/lib/libboost_unit_test_framework-mt.dylib
+  FLAGS = -O3 -Wall -Wextra -march=native -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.0.sdk
+  LINK_LIBRARIES = /usr/local/lib/libboost_unit_test_framework-mt.dylib
+  OBJECT_DIR = src/CMakeFiles/csv.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_FILE = src/csv
+  TARGET_PDB = csv.dbg
+
+
+#############################################
+# Utility command for test
+
+build src/CMakeFiles/test.util: CUSTOM_COMMAND
+  COMMAND = cd /Users/tomaspetricek/Programming/Languages/Cpp/csv/cmake-build-debug/src && /Applications/CLion.app/Contents/bin/cmake/mac/bin/ctest --force-new-ctest-process
+  DESC = Running tests...
+  pool = console
+  restat = 1
+
+build src/test: phony src/CMakeFiles/test.util
+
+
+#############################################
+# Utility command for edit_cache
+
+build src/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /Users/tomaspetricek/Programming/Languages/Cpp/csv/cmake-build-debug/src && /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+  DESC = No interactive CMake dialog available...
+  restat = 1
+
+build src/edit_cache: phony src/CMakeFiles/edit_cache.util
+
+
+#############################################
+# Utility command for rebuild_cache
+
+build src/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /Users/tomaspetricek/Programming/Languages/Cpp/csv/cmake-build-debug/src && /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake --regenerate-during-build -S/Users/tomaspetricek/Programming/Languages/Cpp/csv -B/Users/tomaspetricek/Programming/Languages/Cpp/csv/cmake-build-debug
+  DESC = Running CMake to regenerate build system...
+  pool = console
+  restat = 1
+
+build src/rebuild_cache: phony src/CMakeFiles/rebuild_cache.util
+
+# =============================================================================
+# Write statements declared in CMakeLists.txt:
+# /Users/tomaspetricek/Programming/Languages/Cpp/csv/CMakeLists.txt
+# =============================================================================
+
+# =============================================================================
+# Object build statements for EXECUTABLE target test_
+
+
+#############################################
+# Order-only phony target for test_
+
+build cmake_object_order_depends_target_test_: phony || test/CMakeFiles/test_.dir
+
+build test/CMakeFiles/test_.dir/test.cpp.o: CXX_COMPILER__test__Debug /Users/tomaspetricek/Programming/Languages/Cpp/csv/test/test.cpp || cmake_object_order_depends_target_test_
+  DEFINES = -DBOOST_ATOMIC_DYN_LINK -DBOOST_ATOMIC_NO_LIB -DBOOST_DATE_TIME_DYN_LINK -DBOOST_DATE_TIME_NO_LIB -DBOOST_FILESYSTEM_DYN_LINK -DBOOST_FILESYSTEM_NO_LIB -DBOOST_SYSTEM_DYN_LINK -DBOOST_SYSTEM_NO_LIB -DBOOST_TEST_DYN_LINK -DBOOST_UNIT_TEST_FRAMEWORK_DYN_LINK -DBOOST_UNIT_TEST_FRAMEWORK_NO_LIB -DFMT_SHARED
+  DEP_FILE = test/CMakeFiles/test_.dir/test.cpp.o.d
+  FLAGS = -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.0.sdk -std=gnu++2b
+  INCLUDES = -I/Users/tomaspetricek/Programming/Languages/Cpp/csv/test/../include -I/src -isystem /usr/local/include
+  OBJECT_DIR = test/CMakeFiles/test_.dir
+  OBJECT_FILE_DIR = test/CMakeFiles/test_.dir
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target test_
+
+
+#############################################
+# Link the executable test/test_
+
+build test/test_: CXX_EXECUTABLE_LINKER__test__Debug test/CMakeFiles/test_.dir/test.cpp.o | /usr/local/lib/libboost_system-mt.dylib /usr/local/lib/libboost_filesystem-mt.dylib /usr/local/lib/libboost_unit_test_framework-mt.dylib /usr/local/lib/libboost_date_time-mt.dylib /usr/local/lib/libfmt.9.1.0.dylib /usr/local/lib/libboost_atomic-mt.dylib
+  FLAGS = -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.0.sdk
+  LINK_LIBRARIES = -Wl,-rpath,/usr/local/lib  /usr/local/lib/libboost_system-mt.dylib  /usr/local/lib/libboost_filesystem-mt.dylib  /usr/local/lib/libboost_unit_test_framework-mt.dylib  /usr/local/lib/libboost_date_time-mt.dylib  /usr/local/lib/libfmt.9.1.0.dylib  /usr/local/lib/libboost_atomic-mt.dylib
+  OBJECT_DIR = test/CMakeFiles/test_.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_FILE = test/test_
+  TARGET_PDB = test_.dbg
+
+
+#############################################
+# Utility command for test
+
+build test/CMakeFiles/test.util: CUSTOM_COMMAND
+  COMMAND = cd /Users/tomaspetricek/Programming/Languages/Cpp/csv/cmake-build-debug/test && /Applications/CLion.app/Contents/bin/cmake/mac/bin/ctest --force-new-ctest-process
+  DESC = Running tests...
+  pool = console
+  restat = 1
+
+build test/test: phony test/CMakeFiles/test.util
+
+
+#############################################
+# Utility command for edit_cache
+
+build test/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /Users/tomaspetricek/Programming/Languages/Cpp/csv/cmake-build-debug/test && /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+  DESC = No interactive CMake dialog available...
+  restat = 1
+
+build test/edit_cache: phony test/CMakeFiles/edit_cache.util
+
+
+#############################################
+# Utility command for rebuild_cache
+
+build test/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /Users/tomaspetricek/Programming/Languages/Cpp/csv/cmake-build-debug/test && /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake --regenerate-during-build -S/Users/tomaspetricek/Programming/Languages/Cpp/csv -B/Users/tomaspetricek/Programming/Languages/Cpp/csv/cmake-build-debug
+  DESC = Running CMake to regenerate build system...
+  pool = console
+  restat = 1
+
+build test/rebuild_cache: phony test/CMakeFiles/rebuild_cache.util
+
+# =============================================================================
 # Target aliases.
+
+build csv: phony src/csv
+
+build test_: phony test/test_
 
 # =============================================================================
 # Folder targets.
@@ -103,7 +235,21 @@ build rebuild_cache: phony CMakeFiles/rebuild_cache.util
 #############################################
 # Folder: /Users/tomaspetricek/Programming/Languages/Cpp/csv/cmake-build-debug
 
-build all: phony csv
+build all: phony src/all test/all
+
+# =============================================================================
+
+#############################################
+# Folder: /Users/tomaspetricek/Programming/Languages/Cpp/csv/cmake-build-debug/src
+
+build src/all: phony src/csv
+
+# =============================================================================
+
+#############################################
+# Folder: /Users/tomaspetricek/Programming/Languages/Cpp/csv/cmake-build-debug/test
+
+build test/all: phony test/test_
 
 # =============================================================================
 # Built-in targets
@@ -112,14 +258,14 @@ build all: phony csv
 #############################################
 # Re-run CMake if any of its inputs changed.
 
-build build.ninja: RERUN_CMAKE | ../CMakeLists.txt /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/CMakeCInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/CMakeCXXInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/CMakeCommonLanguageInclude.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/CMakeGenericSystem.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/CMakeInitializeConfigs.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/CMakeLanguageInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/CMakeSystemSpecificInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/CMakeSystemSpecificInitialize.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Compiler/AppleClang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Compiler/AppleClang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Compiler/CMakeCommonCompilerMacros.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Compiler/Clang.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Compiler/GNU.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/FindBoost.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/FindPackageHandleStandardArgs.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/FindPackageMessage.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Platform/Apple-AppleClang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Platform/Apple-AppleClang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Platform/Apple-Clang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Platform/Apple-Clang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Platform/Apple-Clang.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Platform/Darwin-Initialize.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Platform/Darwin.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Platform/UnixPaths.cmake /usr/local/lib/cmake/Boost-1.81.0/BoostConfig.cmake /usr/local/lib/cmake/Boost-1.81.0/BoostConfigVersion.cmake /usr/local/lib/cmake/boost_headers-1.81.0/boost_headers-config-version.cmake /usr/local/lib/cmake/boost_headers-1.81.0/boost_headers-config.cmake CMakeCache.txt CMakeFiles/3.23.2/CMakeCCompiler.cmake CMakeFiles/3.23.2/CMakeCXXCompiler.cmake CMakeFiles/3.23.2/CMakeSystem.cmake
+build build.ninja: RERUN_CMAKE | ../CMakeLists.txt ../src/CMakeLists.txt ../test/CMakeLists.txt /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/CMakeCInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/CMakeCXXInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/CMakeCommonLanguageInclude.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/CMakeGenericSystem.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/CMakeInitializeConfigs.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/CMakeLanguageInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/CMakeSystemSpecificInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/CMakeSystemSpecificInitialize.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Compiler/AppleClang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Compiler/AppleClang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Compiler/CMakeCommonCompilerMacros.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Compiler/Clang.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Compiler/GNU.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/FindBoost.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/FindPackageHandleStandardArgs.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/FindPackageMessage.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Platform/Apple-AppleClang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Platform/Apple-AppleClang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Platform/Apple-Clang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Platform/Apple-Clang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Platform/Apple-Clang.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Platform/Darwin-Initialize.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Platform/Darwin.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Platform/UnixPaths.cmake /usr/local/lib/cmake/Boost-1.81.0/BoostConfig.cmake /usr/local/lib/cmake/Boost-1.81.0/BoostConfigVersion.cmake /usr/local/lib/cmake/BoostDetectToolset-1.81.0.cmake /usr/local/lib/cmake/boost_atomic-1.81.0/boost_atomic-config-version.cmake /usr/local/lib/cmake/boost_atomic-1.81.0/boost_atomic-config.cmake /usr/local/lib/cmake/boost_atomic-1.81.0/libboost_atomic-variant-mt-shared.cmake /usr/local/lib/cmake/boost_atomic-1.81.0/libboost_atomic-variant-mt-static.cmake /usr/local/lib/cmake/boost_date_time-1.81.0/boost_date_time-config-version.cmake /usr/local/lib/cmake/boost_date_time-1.81.0/boost_date_time-config.cmake /usr/local/lib/cmake/boost_date_time-1.81.0/libboost_date_time-variant-mt-shared.cmake /usr/local/lib/cmake/boost_date_time-1.81.0/libboost_date_time-variant-mt-static.cmake /usr/local/lib/cmake/boost_date_time-1.81.0/libboost_date_time-variant-shared.cmake /usr/local/lib/cmake/boost_date_time-1.81.0/libboost_date_time-variant-static.cmake /usr/local/lib/cmake/boost_filesystem-1.81.0/boost_filesystem-config-version.cmake /usr/local/lib/cmake/boost_filesystem-1.81.0/boost_filesystem-config.cmake /usr/local/lib/cmake/boost_filesystem-1.81.0/libboost_filesystem-variant-mt-shared.cmake /usr/local/lib/cmake/boost_filesystem-1.81.0/libboost_filesystem-variant-mt-static.cmake /usr/local/lib/cmake/boost_filesystem-1.81.0/libboost_filesystem-variant-shared.cmake /usr/local/lib/cmake/boost_filesystem-1.81.0/libboost_filesystem-variant-static.cmake /usr/local/lib/cmake/boost_headers-1.81.0/boost_headers-config-version.cmake /usr/local/lib/cmake/boost_headers-1.81.0/boost_headers-config.cmake /usr/local/lib/cmake/boost_system-1.81.0/boost_system-config-version.cmake /usr/local/lib/cmake/boost_system-1.81.0/boost_system-config.cmake /usr/local/lib/cmake/boost_system-1.81.0/libboost_system-variant-mt-shared.cmake /usr/local/lib/cmake/boost_system-1.81.0/libboost_system-variant-mt-static.cmake /usr/local/lib/cmake/boost_system-1.81.0/libboost_system-variant-shared.cmake /usr/local/lib/cmake/boost_system-1.81.0/libboost_system-variant-static.cmake /usr/local/lib/cmake/boost_unit_test_framework-1.81.0/boost_unit_test_framework-config-version.cmake /usr/local/lib/cmake/boost_unit_test_framework-1.81.0/boost_unit_test_framework-config.cmake /usr/local/lib/cmake/boost_unit_test_framework-1.81.0/libboost_unit_test_framework-variant-mt-shared.cmake /usr/local/lib/cmake/boost_unit_test_framework-1.81.0/libboost_unit_test_framework-variant-mt-static.cmake /usr/local/lib/cmake/boost_unit_test_framework-1.81.0/libboost_unit_test_framework-variant-shared.cmake /usr/local/lib/cmake/boost_unit_test_framework-1.81.0/libboost_unit_test_framework-variant-static.cmake /usr/local/lib/cmake/fmt/fmt-config-version.cmake /usr/local/lib/cmake/fmt/fmt-config.cmake /usr/local/lib/cmake/fmt/fmt-targets-release.cmake /usr/local/lib/cmake/fmt/fmt-targets.cmake CMakeCache.txt CMakeFiles/3.23.2/CMakeCCompiler.cmake CMakeFiles/3.23.2/CMakeCXXCompiler.cmake CMakeFiles/3.23.2/CMakeSystem.cmake
   pool = console
 
 
 #############################################
 # A missing CMake input file is not an error.
 
-build ../CMakeLists.txt /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/CMakeCInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/CMakeCXXInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/CMakeCommonLanguageInclude.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/CMakeGenericSystem.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/CMakeInitializeConfigs.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/CMakeLanguageInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/CMakeSystemSpecificInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/CMakeSystemSpecificInitialize.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Compiler/AppleClang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Compiler/AppleClang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Compiler/CMakeCommonCompilerMacros.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Compiler/Clang.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Compiler/GNU.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/FindBoost.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/FindPackageHandleStandardArgs.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/FindPackageMessage.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Platform/Apple-AppleClang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Platform/Apple-AppleClang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Platform/Apple-Clang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Platform/Apple-Clang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Platform/Apple-Clang.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Platform/Darwin-Initialize.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Platform/Darwin.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Platform/UnixPaths.cmake /usr/local/lib/cmake/Boost-1.81.0/BoostConfig.cmake /usr/local/lib/cmake/Boost-1.81.0/BoostConfigVersion.cmake /usr/local/lib/cmake/boost_headers-1.81.0/boost_headers-config-version.cmake /usr/local/lib/cmake/boost_headers-1.81.0/boost_headers-config.cmake CMakeCache.txt CMakeFiles/3.23.2/CMakeCCompiler.cmake CMakeFiles/3.23.2/CMakeCXXCompiler.cmake CMakeFiles/3.23.2/CMakeSystem.cmake: phony
+build ../CMakeLists.txt ../src/CMakeLists.txt ../test/CMakeLists.txt /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/CMakeCInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/CMakeCXXInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/CMakeCommonLanguageInclude.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/CMakeGenericSystem.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/CMakeInitializeConfigs.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/CMakeLanguageInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/CMakeSystemSpecificInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/CMakeSystemSpecificInitialize.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Compiler/AppleClang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Compiler/AppleClang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Compiler/CMakeCommonCompilerMacros.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Compiler/Clang.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Compiler/GNU.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/FindBoost.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/FindPackageHandleStandardArgs.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/FindPackageMessage.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Platform/Apple-AppleClang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Platform/Apple-AppleClang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Platform/Apple-Clang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Platform/Apple-Clang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Platform/Apple-Clang.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Platform/Darwin-Initialize.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Platform/Darwin.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Platform/UnixPaths.cmake /usr/local/lib/cmake/Boost-1.81.0/BoostConfig.cmake /usr/local/lib/cmake/Boost-1.81.0/BoostConfigVersion.cmake /usr/local/lib/cmake/BoostDetectToolset-1.81.0.cmake /usr/local/lib/cmake/boost_atomic-1.81.0/boost_atomic-config-version.cmake /usr/local/lib/cmake/boost_atomic-1.81.0/boost_atomic-config.cmake /usr/local/lib/cmake/boost_atomic-1.81.0/libboost_atomic-variant-mt-shared.cmake /usr/local/lib/cmake/boost_atomic-1.81.0/libboost_atomic-variant-mt-static.cmake /usr/local/lib/cmake/boost_date_time-1.81.0/boost_date_time-config-version.cmake /usr/local/lib/cmake/boost_date_time-1.81.0/boost_date_time-config.cmake /usr/local/lib/cmake/boost_date_time-1.81.0/libboost_date_time-variant-mt-shared.cmake /usr/local/lib/cmake/boost_date_time-1.81.0/libboost_date_time-variant-mt-static.cmake /usr/local/lib/cmake/boost_date_time-1.81.0/libboost_date_time-variant-shared.cmake /usr/local/lib/cmake/boost_date_time-1.81.0/libboost_date_time-variant-static.cmake /usr/local/lib/cmake/boost_filesystem-1.81.0/boost_filesystem-config-version.cmake /usr/local/lib/cmake/boost_filesystem-1.81.0/boost_filesystem-config.cmake /usr/local/lib/cmake/boost_filesystem-1.81.0/libboost_filesystem-variant-mt-shared.cmake /usr/local/lib/cmake/boost_filesystem-1.81.0/libboost_filesystem-variant-mt-static.cmake /usr/local/lib/cmake/boost_filesystem-1.81.0/libboost_filesystem-variant-shared.cmake /usr/local/lib/cmake/boost_filesystem-1.81.0/libboost_filesystem-variant-static.cmake /usr/local/lib/cmake/boost_headers-1.81.0/boost_headers-config-version.cmake /usr/local/lib/cmake/boost_headers-1.81.0/boost_headers-config.cmake /usr/local/lib/cmake/boost_system-1.81.0/boost_system-config-version.cmake /usr/local/lib/cmake/boost_system-1.81.0/boost_system-config.cmake /usr/local/lib/cmake/boost_system-1.81.0/libboost_system-variant-mt-shared.cmake /usr/local/lib/cmake/boost_system-1.81.0/libboost_system-variant-mt-static.cmake /usr/local/lib/cmake/boost_system-1.81.0/libboost_system-variant-shared.cmake /usr/local/lib/cmake/boost_system-1.81.0/libboost_system-variant-static.cmake /usr/local/lib/cmake/boost_unit_test_framework-1.81.0/boost_unit_test_framework-config-version.cmake /usr/local/lib/cmake/boost_unit_test_framework-1.81.0/boost_unit_test_framework-config.cmake /usr/local/lib/cmake/boost_unit_test_framework-1.81.0/libboost_unit_test_framework-variant-mt-shared.cmake /usr/local/lib/cmake/boost_unit_test_framework-1.81.0/libboost_unit_test_framework-variant-mt-static.cmake /usr/local/lib/cmake/boost_unit_test_framework-1.81.0/libboost_unit_test_framework-variant-shared.cmake /usr/local/lib/cmake/boost_unit_test_framework-1.81.0/libboost_unit_test_framework-variant-static.cmake /usr/local/lib/cmake/fmt/fmt-config-version.cmake /usr/local/lib/cmake/fmt/fmt-config.cmake /usr/local/lib/cmake/fmt/fmt-targets-release.cmake /usr/local/lib/cmake/fmt/fmt-targets.cmake CMakeCache.txt CMakeFiles/3.23.2/CMakeCCompiler.cmake CMakeFiles/3.23.2/CMakeCXXCompiler.cmake CMakeFiles/3.23.2/CMakeSystem.cmake: phony
 
 
 #############################################

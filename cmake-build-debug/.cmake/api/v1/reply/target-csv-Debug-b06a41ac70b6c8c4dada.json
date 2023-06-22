@@ -2,7 +2,7 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "csv"
+			"path" : "src/csv"
 		}
 	],
 	"backtrace" : 1,
@@ -11,11 +11,13 @@
 		"commands" : 
 		[
 			"add_executable",
+			"target_link_libraries",
+			"add_definitions",
 			"include_directories"
 		],
 		"files" : 
 		[
-			"CMakeLists.txt"
+			"src/CMakeLists.txt"
 		],
 		"nodes" : 
 		[
@@ -25,7 +27,7 @@
 			{
 				"command" : 0,
 				"file" : 0,
-				"line" : 4,
+				"line" : 2,
 				"parent" : 0
 			},
 			{
@@ -35,9 +37,21 @@
 				"parent" : 0
 			},
 			{
-				"command" : 1,
+				"command" : 2,
 				"file" : 0,
 				"line" : 7,
+				"parent" : 0
+			},
+			{
+				"command" : 3,
+				"file" : 0,
+				"line" : 1,
+				"parent" : 0
+			},
+			{
+				"command" : 3,
+				"file" : 0,
+				"line" : 4,
 				"parent" : 0
 			}
 		]
@@ -54,14 +68,30 @@
 					"fragment" : "-std=gnu++2b"
 				}
 			],
-			"includes" : 
+			"defines" : 
 			[
 				{
 					"backtrace" : 2,
-					"path" : "/Users/tomaspetricek/Programming/Languages/Cpp/csv/include"
+					"define" : "BOOST_UNIT_TEST_FRAMEWORK_DYN_LINK"
+				},
+				{
+					"backtrace" : 2,
+					"define" : "BOOST_UNIT_TEST_FRAMEWORK_NO_LIB"
 				},
 				{
 					"backtrace" : 3,
+					"define" : "NDEBUG"
+				}
+			],
+			"includes" : 
+			[
+				{
+					"backtrace" : 4,
+					"path" : "/Users/tomaspetricek/Programming/Languages/Cpp/csv/src/../include"
+				},
+				{
+					"backtrace" : 5,
+					"isSystem" : true,
 					"path" : "/usr/local/include"
 				}
 			],
@@ -80,7 +110,7 @@
 			]
 		}
 	],
-	"id" : "csv::@6890427a1f51a3e7e1df",
+	"id" : "csv::@145eef247bfb46b6828c",
 	"link" : 
 	{
 		"commandFragments" : 
@@ -92,6 +122,11 @@
 			{
 				"fragment" : "",
 				"role" : "flags"
+			},
+			{
+				"backtrace" : 2,
+				"fragment" : "/usr/local/lib/libboost_unit_test_framework-mt.dylib",
+				"role" : "libraries"
 			}
 		],
 		"language" : "CXX"
@@ -100,8 +135,8 @@
 	"nameOnDisk" : "csv",
 	"paths" : 
 	{
-		"build" : ".",
-		"source" : "."
+		"build" : "src",
+		"source" : "src"
 	},
 	"sourceGroups" : 
 	[
@@ -118,7 +153,7 @@
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "main.cpp",
+			"path" : "src/main.cpp",
 			"sourceGroupIndex" : 0
 		}
 	],
