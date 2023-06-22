@@ -14,7 +14,6 @@ namespace csv {
     template<std::size_t n_cols, class Stringifier = stringifier>
     class writer : public base<n_cols, std::ofstream> {
         using base_type = base<n_cols, std::ofstream>;
-        constexpr static std::ios_base::openmode default_mode = std::ios_base::out;
 
         void write_value(std::size_t i, const std::string& val)
         {
@@ -23,7 +22,9 @@ namespace csv {
         }
 
     public:
-        explicit writer(const std::filesystem::path& path, char delim = base_type::default_delim,
+        constexpr static std::ios_base::openmode default_mode = std::ios_base::out;
+
+        explicit writer(const std::filesystem::path& path, char delim = base_type::default_delimiter,
                 std::ios_base::openmode mode = default_mode)
                 :base_type{delim}
         {

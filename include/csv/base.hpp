@@ -13,14 +13,14 @@ namespace csv {
     protected:
         FileStream file_;
         char delim_;
-        constexpr static char default_delim = ',';
 
-        explicit base(char delim = default_delim)
+        explicit base(char delim = default_delimiter)
                 :delim_(delim) { }
 
     public:
         constexpr static std::size_t column_count = n_cols;
         using file_stream_type = FileStream;
+        constexpr static char default_delimiter = ',';
     };
 }
 

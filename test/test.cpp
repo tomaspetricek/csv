@@ -5,4 +5,5 @@
 #define BOOST_TEST_MAIN
 #include "csv/parser.hpp"
 #include "csv/reader.hpp"
+#include "csv/stringifier.hpp"
 #include "csv/writer.hpp"

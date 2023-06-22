@@ -55,7 +55,7 @@ namespace csv {
         }
 
     public:
-        explicit reader(const std::filesystem::path& path, char delim = base_type::default_delim)
+        explicit reader(const std::filesystem::path& path, char delim = base_type::default_delimiter)
                 :base_type{delim}
         {
             if (!std::filesystem::exists(path))
